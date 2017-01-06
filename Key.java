@@ -20,8 +20,8 @@ public class Key implements WritableComparable<Key>
     public Key()
     {
         this.pos = new Position();
-        this.n = new IntWritable();
-        this.M = new IntWritable();
+        this.n = new IntWritable(0);
+        this.M = new IntWritable(0);
     }
 
     //Setter method to set the values of WebLogWritable object

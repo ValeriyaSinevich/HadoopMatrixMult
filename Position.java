@@ -14,9 +14,10 @@ public class Position implements WritableComparable<Position> {
     //Default Constructor
     public Position()
     {
-        this.i = new IntWritable();
-        this.j = new IntWritable();
+        this.i = new IntWritable(0);
+        this.j = new IntWritable(0);
     }
+
     public Position(int _i, int _j)
     {
         this.i = new IntWritable(_i);
@@ -28,7 +29,7 @@ public class Position implements WritableComparable<Position> {
     public void set(int _i, int _j)
     {
         this.i.set(_i);
-        this.i.set(_j);
+        this.j.set(_j);
     }
 
 
@@ -71,6 +72,7 @@ public class Position implements WritableComparable<Position> {
     @Override
     public boolean equals(Object o)
     {
+        if (o == null) return false;
         if (o instanceof Position)
         {
             Position other = (Position) o;
